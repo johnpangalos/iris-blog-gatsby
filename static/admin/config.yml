@@ -8,16 +8,19 @@ public_folder: /img
 collections:
   - name: "featured"
     label: "Featured"
-    fields:
-      - {
-          label: "Featured Articles",
-          name: "featured",
-          widget: "relation",
-          collection: "recipes",
-          searchFields: "title",
-          valueFields: "{{slug}}",
-          multiple: true,
-        }
+    files:
+      - label: "Featured Articles"
+        name: "featured"
+        file: "content/featured-recipes.yml"
+        fields:
+          - label: "Featured Articles"
+            name: "featured"
+            widget: "relation"
+            collection: "recipes"
+            searchFields: "title"
+            valueFields: "{{slug}}"
+            multiple: true
+        
   - name: "recipes"
     label: "Recipes"
     folder: "content/recipes"
