@@ -6,14 +6,43 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "featured"
+    label: "Featured"
+    fields:
+      - {
+          label: "Featured Articles",
+          name: "featured",
+          widget: "relation",
+          collection: "recipes",
+          searchFields: "title",
+          valueFields: "{{slug}}",
+          multiple: true,
+        }
+  - name: "recipes"
+    label: "Recipes"
+    folder: "content/recipes"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Prep Time", name: "prep-time", widget: "number" }
+      - { label: "Total Time", name: "total-time", widget: "number" }
+      - { label: "Servings", name: "servings", widget: "number" }
+      - { label: "Serving size", name: "serving-size", widget: "string" }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Cuisine", name: "cuisine", widget: "list" }
+      - {
+          label: "Ingredients",
+          name: "ingredients",
+          widget: "list",
+          fields: 
+          - { label: "Name", name: "name", widget: "string" },
+          - { label: "Amount", name: "amount", widget: "number", valueType: "float" },
+          - { label: "Unit", name: "unit", widget: "string" },
+          - { label: "Optional", name: "optional", widget: "boolean" }
+        }
+      - { label: "Instructions", name: "instructions", widget: "list" }
