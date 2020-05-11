@@ -35,9 +35,9 @@ collections:
       - { label: "Serving size", name: "serving-size", widget: "string" }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Cuisine", name: "cuisine", widget: "list" }
-      - label: "Ingredients",
-        name: "ingredients",
-        widget: "list",
+      - label: "Ingredients"
+        name: "ingredients"
+        widget: "list"
         fields: 
           - { label: "Name", name: "name", widget: "string" },
           - { label: "Amount", name: "amount", widget: "number", valueType: "float" },
