@@ -1,4 +1,3 @@
-const resolveConfig = require("tailwindcss/resolveConfig")
 const tailwindConfig = require("./tailwind.config.js")
 
 module.exports = {
@@ -19,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/recipes`,
+        name: `recipes`,
       },
     },
     {
