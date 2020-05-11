@@ -6,21 +6,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "featured"
-    label: "Featured"
-    files:
-      - label: "Featured Articles"
-        name: "featured"
-        file: "content/featured-recipes.yml"
-        fields:
-          - label: "Featured Articles"
-            name: "featured"
-            widget: "relation"
-            collection: "recipes"
-            searchFields: "title"
-            valueFields: "{{slug}}"
-            multiple: true
-        
   - name: "recipes"
     label: "Recipes"
     folder: "content/recipes"
@@ -37,13 +22,24 @@ collections:
       - { label: "Servings", name: "servings", widget: "number" }
       - { label: "Serving size", name: "serving-size", widget: "string" }
       - { label: "Course", name: "course", widget: "string" }
-      - { label: "Cuisine", name: "cuisine", widget: "list" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
       - label: "Ingredients"
         name: "ingredients"
         widget: "list"
-        fields: 
+        fields:
           - { label: "Name", name: "name", widget: "string" }
-          - { label: "Amount", name: "amount", widget: "number", valueType: "float" }
+          - {
+              label: "Amount",
+              name: "amount",
+              widget: "number",
+              valueType: "float",
+            }
           - { label: "Unit", name: "unit", widget: "string" }
           - { label: "Optional", name: "optional", widget: "boolean" }
-      - { label: "Instructions", name: "instructions", widget: "list" }
+      - label: "Instructions"
+        name: "instructions"
+        widget: "list"
+        field: { label: "Step", name: "step", widget: "string" }
