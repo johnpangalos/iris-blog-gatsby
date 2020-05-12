@@ -32,6 +32,7 @@ type Data = {
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
+  console.log(posts)
 
   return (
     <Layout location={location} title={siteTitle}>
