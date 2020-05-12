@@ -38,7 +38,7 @@ collections:
               valueType: "float",
             }
           - { label: "Unit", name: "unit", widget: "string" }
-          - { label: "Optional", name: "optional", widget: "boolean" }
+          - { label: "Optional", name: "optional", widget: "boolean", required: false }
       - label: "Instructions"
         name: "instructions"
         widget: "list"
