@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Img from "gatsby-image"
+import Logo from "./Logo"
 
 library.add(faInstagram, faPinterestP, faYoutube, faTwitter, faFacebookF)
 
@@ -60,8 +61,8 @@ const Header = () => {
       </div>
       <div className="max-w-screen-lg w-full mx-auto pb-6 pt-5">
         <div className="flex h-20 items-center">
-          <Link to="/" className="bg-blue-400 p-2">
-            <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />
+          <Link to="/">
+            <Logo />
           </Link>
           <div className="flex-1" />
           <LinkWrapper to="/blogs">Blogs</LinkWrapper>
