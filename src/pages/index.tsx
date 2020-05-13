@@ -1,8 +1,8 @@
 // Gatsby supports TypeScript natively!
 import * as React from "react"
 import { PageProps, Link, graphql } from "gatsby"
+import Img, { FluidObject } from "gatsby-image"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -12,6 +12,17 @@ type Data = {
       title: string
     }
   }
+  allFile: {
+    edges: {
+      node: {
+        name: string
+        relativePath: string
+        childImageSharp: {
+          fluid: FluidObject
+        }
+      }
+    }[]
+  }
   allMarkdownRemark: {
     edges: {
       node: {
@@ -20,6 +31,7 @@ type Data = {
           title: string
           date: string
           description: string
+          thumbnail: string
         }
         fields: {
           slug: string
@@ -32,26 +44,22 @@ type Data = {
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  console.log(posts)
+  console.log(data)
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const {
+          node: { childImageSharp },
+        } = data.allFile.edges.find(edge => {
+          return node.frontmatter.thumbnail.includes(edge.node.relativePath)
+        })
+        // const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
-            <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-              {title}
-            </Link>
-            {node.frontmatter.date}
-            <p
-              dangerouslySetInnerHTML={{
-                __html: node.frontmatter.description || node.excerpt,
-              }}
-            />
-          </article>
+          <div className="w-1/3 px-2" key={node.fields.slug}>
+            <Img fluid={childImageSharp.fluid} />
+          </div>
         )
       })}
     </Layout>
@@ -67,7 +75,23 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allFile(filter: { sourceInstanceName: { eq: "blog-images" } }) {
+      edges {
+        node {
+          relativePath
+          name
+          childImageSharp {
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 3
+    ) {
       edges {
         node {
           excerpt
@@ -78,6 +102,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            thumbnail
           }
         }
       }
