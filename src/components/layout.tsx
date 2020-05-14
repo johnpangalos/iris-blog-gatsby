@@ -60,7 +60,7 @@ const Header = () => {
         </div>
       </div>
       <div className="max-w-screen-lg w-full mx-auto pb-6 pt-5">
-        <div className="flex h-20 items-center">
+        <div className="flex h-20 items-center border-b-2">
           <Link to="/">
             <Logo />
           </Link>
