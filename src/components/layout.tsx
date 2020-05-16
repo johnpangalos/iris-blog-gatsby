@@ -27,11 +27,11 @@ const icons: IconName[] = [
 
 const SearchBar = () => (
   <div className="h-12 bg-blue-200">
-    <div className="flex w-full h-full mx-auto items-center max-w-screen-lg">
+    <div className="flex w-full h-full mx-auto items-center max-w-screen-lg px-5 xl:px-0">
       <div className="flex-grow" />
       <div className="flex">
         {icons.map(name => (
-          <a href={`#${name}`} className="px-2">
+          <a href={`#${name}`} className="pl-4">
             <FontAwesomeIcon
               style={{ fontSize: "1.2rem" }}
               className="text-gray-900"
@@ -66,7 +66,7 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <SearchBar />
-      <div className="flex flex-col max-w-screen-lg w-full mx-auto px-5 lg:px-0 h-full flex-1">
+      <div className="flex flex-col max-w-screen-lg w-full mx-auto px-5 xl:px-0 h-full flex-1">
         <HeaderNav />
         <div className="flex-1 pb-4">{children}</div>
         <div className="py-3 border-t-2">

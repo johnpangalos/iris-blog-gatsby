@@ -50,11 +50,13 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="flex items-center">
-        <div className="font-bold text-4xl pb-3 flex-1">Brand New Eats!</div>
-        <Button>All Recipies</Button>
+      <div className="flex flex-col md:flex-row md:items-center">
+        <div className="font-bold text-4xl md:pb-3 flex-1">Brand New Eats!</div>
+        <div className="flex pb-3 md:pb-0">
+          <Button>All Recipies</Button>
+        </div>
       </div>
-      <div className="flex flex-col md:flex-row md:space-x-4">
+      <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
         {posts.map(({ node }) => {
           const {
             node: { childImageSharp },
