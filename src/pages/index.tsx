@@ -5,6 +5,7 @@ import Img, { FluidObject } from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Button } from "../components"
 
 type Data = {
   site: {
@@ -49,19 +50,34 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      {posts.map(({ node }) => {
-        const {
-          node: { childImageSharp },
-        } = data.allFile.edges.find(edge => {
-          return node.frontmatter.thumbnail.includes(edge.node.relativePath)
-        })
-        // const title = node.frontmatter.title || node.fields.slug
-        return (
-          <div className="w-1/3 px-2" key={node.fields.slug}>
-            <Img fluid={childImageSharp.fluid} />
-          </div>
-        )
-      })}
+      <div className="flex items-center">
+        <div className="font-bold text-4xl pb-3 flex-1">Brand New Eats!</div>
+        <Button>All Recipies</Button>
+      </div>
+      <div className="flex flex-col md:flex-row md:space-x-4">
+        {posts.map(({ node }) => {
+          const {
+            node: { childImageSharp },
+          } = data.allFile.edges.find(edge => {
+            return node.frontmatter.thumbnail.includes(edge.node.relativePath)
+          })
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <div className="md:w-1/3">
+              <Link to={node.fields.slug} key={node.fields.slug}>
+                <div className="p-3 shadow-md bg-white">
+                  <Img
+                    className="h-96 object-center object-cover"
+                    fluid={childImageSharp.fluid}
+                  />
+
+                  <div className="font-bold text-2xl pt-2">{title}</div>
+                </div>
+              </Link>
+            </div>
+          )
+        })}
+      </div>
     </Layout>
   )
 }
