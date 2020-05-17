@@ -9,8 +9,11 @@ servings: 1
 serving-size: Big
 course: Of course
 tags:
-  - Quick and easy
-  - Few Ingredients
+  - gluten-free
+  - vegan
+  - vegetarian
+  - dairy-free
+  - naturally-sweetened
 ingredients:
   - name: Bread
     amount: 2
