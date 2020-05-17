@@ -50,11 +50,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="flex flex-col md:flex-row md:items-center">
-        <div className="font-bold text-4xl md:pb-3 flex-1">Brand New Eats!</div>
-        <div className="flex pb-3 md:pb-0">
-          <Button>All Recipies</Button>
-        </div>
+      <div className="flex items-center pb-3">
+        <div className="font-bold text-2xl flex-1">New Eats!</div>
+        <Button>All Recipies</Button>
       </div>
       <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
         {posts.map(({ node }) => {
@@ -65,17 +63,23 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
           })
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div className="md:w-1/3">
-              <Link to={node.fields.slug} key={node.fields.slug}>
-                <div className="p-3 shadow-md bg-white">
-                  <Img
-                    className="h-96 object-center object-cover"
-                    fluid={childImageSharp.fluid}
-                  />
+            <div className="md:w-1/3" key={node.fields.slug}>
+              <div className="shadow-md bg-white rounded">
+                <Img
+                  className="h-64 object-center object-cover rounded-t"
+                  fluid={childImageSharp.fluid}
+                />
 
-                  <div className="font-bold text-2xl pt-2">{title}</div>
+                <div className="pt-4 px-4">
+                  <div className="font-bold text-xl">{title}</div>
+                  <div>{node.frontmatter.description}</div>
                 </div>
-              </Link>
+                <div className="px-2 py-2">
+                  <Link to={node.fields.slug}>
+                    <Button>Read more</Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           )
         })}

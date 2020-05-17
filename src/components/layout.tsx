@@ -50,17 +50,15 @@ const HeaderNav = () => (
         <Logo />
       </Link>
       <div className="flex-1" />
-      <LinkWrapper to="/blogs">Blogs</LinkWrapper>
-      <LinkWrapper to="/contact">Contact me</LinkWrapper>
     </div>
   </div>
 )
 
-const LinkWrapper = ({ to, children }) => (
-  <div className="pl-4 pb-1">
-    <Link to={to}>{children}</Link>
-  </div>
-)
+// const LinkWrapper = ({ to, children }) => (
+// <div className="pl-4 pb-1">
+// <Link to={to}>{children}</Link>
+// </div>
+// )
 
 const Layout = ({ location, title, children }) => {
   return (

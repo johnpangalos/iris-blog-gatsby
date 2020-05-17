@@ -14,10 +14,9 @@ export const Button = ({
   outlined,
   contained,
 }: ButtonProps) => (
-  <div
-    role="button"
+  <button
     className={cn(
-      "text-lg uppercase px-4 py-2 rounded duration-300 ease-in-out",
+      "text-lg uppercase px-2 py-1 rounded duration-300 ease-in-out",
       {
         [`bg-orange-500 shadow hover:shadow-lg transition-shadow text-white`]: contained,
         [`border border-orange-500`]: outlined,
@@ -27,5 +26,5 @@ export const Button = ({
     onClick={onClick}
   >
     {children}
-  </div>
+  </button>
 )
