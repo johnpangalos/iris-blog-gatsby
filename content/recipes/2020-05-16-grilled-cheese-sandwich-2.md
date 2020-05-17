@@ -9,8 +9,7 @@ servings: 1
 serving-size: Big
 course: Of course
 tags:
-  - Quick and easy
-  - Few Ingredients
+  - dairy-free
 ingredients:
   - name: Bread
     amount: 2
