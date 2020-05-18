@@ -24,8 +24,10 @@ collections:
       - { label: "Course", name: "course", widget: "string" }
       - label: "Tags"
         name: "tags"
-        widget: "list"
-        field: { label: "Tag", name: "tag", widget: "string" }
+        widget: "select"
+        options: ["gluten-free", "vegan", "vegetarian", "dairy-free", "naturally-sweetened"]
+        multiple: true
+        default: []
       - label: "Ingredients"
         name: "ingredients"
         widget: "list"

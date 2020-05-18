@@ -5,7 +5,7 @@ import Img, { FluidObject } from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Button } from "../components"
+import { Button, FoodTypeTag } from "../components"
 
 type Data = {
   site: {
@@ -33,6 +33,7 @@ type Data = {
           date: string
           description: string
           thumbnail: string
+          tags: string[]
         }
         fields: {
           slug: string
@@ -45,7 +46,6 @@ type Data = {
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  console.log(data)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -73,6 +73,11 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                 <div className="pt-4 px-4">
                   <div className="font-bold text-xl">{title}</div>
                   <div>{node.frontmatter.description}</div>
+                  <div className="flex space-x-2">
+                    {node.frontmatter.tags.map(tag => (
+                      <FoodTypeTag name={tag} />
+                    ))}
+                  </div>
                 </div>
                 <div className="px-2 py-2">
                   <Link to={node.fields.slug}>
@@ -125,6 +130,7 @@ export const pageQuery = graphql`
             title
             description
             thumbnail
+            tags
           }
         }
       }

@@ -2,7 +2,7 @@ const tailwindConfig = require("./tailwind.config.js")
 
 module.exports = {
   siteMetadata: {
-    title: `Elevate with Eva`,
+    title: `Everyday Eva`,
     author: {
       name: `Eva`,
       summary: `A blogger with taste`,
