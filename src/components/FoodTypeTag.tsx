@@ -45,7 +45,7 @@ export const FoodTypeTag = ({ name }) => {
   return (
     <div
       className={cn(
-        "rounded-full h-8 w-8 p-1 font-bold text-white text-center align-middle",
+        "text-base rounded-full h-8 w-8 p-1 font-bold text-white text-center align-middle",
         FoodTypeTagMap[name].color
       )}
     >

@@ -32,11 +32,11 @@ type Data = {
       thumbnail: string
       tags: string[]
       title: string
-      total_time: string
+      cook_time: number
+      prep_time: number
       servings: string
       serving_size: string
       instructions: string
-      prep_time: string
       description: string
       course: string
       ingredients: {
@@ -75,11 +75,35 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
       </div>
 
       <Img
-        className="object-center object-cover rounded-t"
+        className="object-center object-cover"
         fluid={childImageSharp.fluid}
       />
 
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className="py-3">
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
+      <div>
+        <div className="flex">
+          <div className="flex-grow">
+            <div className="text-3xl font-bold">{post.frontmatter.title}</div>
+            <div>{post.frontmatter.description}</div>
+            <div>
+              <div>Prep time</div>
+              <div>{post.frontmatter.prep_time}</div>
+              <div>Cook time</div>
+              <div>{post.frontmatter.cook_time}</div>
+              <div>Total time</div>
+              <div>
+                {post.frontmatter.prep_time + post.frontmatter.cook_time}
+              </div>
+            </div>
+          </div>
+          <Img
+            className="w-64 h-64 object-center object-cover"
+            fluid={childImageSharp.fluid}
+          />
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -114,7 +138,7 @@ export const pageQuery = graphql`
         thumbnail
         tags
         title
-        total_time
+        cook_time
         servings
         serving_size
         instructions

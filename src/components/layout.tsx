@@ -60,7 +60,7 @@ const Layout = ({ location, title, children }) => {
       <SearchBar />
       <div className="flex flex-col max-w-screen-lg w-full mx-auto px-5 xl:px-0 h-full flex-1">
         <HeaderNav />
-        <div className="flex-1 pb-4">{children}</div>
+        <div className="flex-1 pb-4 text-lg">{children}</div>
         <div className="py-3 border-t-2">
           © {new Date().getFullYear()}, Built with
           {` `}
