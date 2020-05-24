@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import {
   library,
   IconPrefix,
@@ -31,7 +31,7 @@ const SearchBar = () => (
       <div className="flex-grow" />
       <div className="flex">
         {icons.map(name => (
-          <a href={`#${name}`} className="pl-4">
+          <a key={name} href={`#${name}`} className="pl-4">
             <FontAwesomeIcon
               style={{ fontSize: "1.2rem" }}
               className="text-gray-900"
@@ -45,7 +45,7 @@ const SearchBar = () => (
 )
 const HeaderNav = () => (
   <div className="pb-6 pt-5">
-    <div className="flex h-20 items-center border-b-2">
+    <div className="flex items-center pb-4 pt-2 border-b-2">
       <Link to="/">
         <Logo />
       </Link>
@@ -53,12 +53,6 @@ const HeaderNav = () => (
     </div>
   </div>
 )
-
-// const LinkWrapper = ({ to, children }) => (
-// <div className="pl-4 pb-1">
-// <Link to={to}>{children}</Link>
-// </div>
-// )
 
 const Layout = ({ location, title, children }) => {
   return (

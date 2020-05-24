@@ -73,7 +73,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                 <div className="pt-4 px-4">
                   <div className="font-bold text-xl">{title}</div>
                   <div>{node.frontmatter.description}</div>
-                  <div className="flex space-x-2">
+                  <div className="flex space-x-2 pt-2">
                     {node.frontmatter.tags.map(tag => (
                       <FoodTypeTag name={tag} />
                     ))}
