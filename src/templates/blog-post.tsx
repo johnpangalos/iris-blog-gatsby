@@ -90,12 +90,6 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
             <div>
               <div>Prep time</div>
               <div>{post.frontmatter.prep_time}</div>
-              <div>Cook time</div>
-              <div>{post.frontmatter.cook_time}</div>
-              <div>Total time</div>
-              <div>
-                {post.frontmatter.prep_time + post.frontmatter.cook_time}
-              </div>
             </div>
           </div>
           <Img
@@ -138,7 +132,6 @@ export const pageQuery = graphql`
         thumbnail
         tags
         title
-        cook_time
         servings
         serving_size
         instructions
