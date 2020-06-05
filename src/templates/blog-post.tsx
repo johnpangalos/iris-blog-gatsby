@@ -114,14 +114,6 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
 
         <div>
           <div className="font-bold text-2xl py-2">Ingredients</div>
-          <ul className="list-disc list-inside pl-2">
-            {post.frontmatter.ingredients.map(ingredient => (
-              <li className="pb-2">
-                {ingredient.amount} {ingredient.unit} {ingredient.name}{" "}
-                {ingredient.optional ? "(optional)" : ""}
-              </li>
-            ))}
-          </ul>
 
           <div className="font-bold text-2xl py-2">Instructions</div>
           <ol className="list-decimal list-inside pl-2">
@@ -134,6 +126,15 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
     </Layout>
   )
 }
+
+// <ul className="list-disc list-inside pl-2">
+// {post.frontmatter.ingredients.map(ingredient => (
+// <li className="pb-2">
+// {ingredient.amount} {ingredient.unit} {ingredient.name}{" "}
+// {ingredient.optional ? "(optional)" : ""}
+// </li>
+// ))}
+// </ul>
 
 export default BlogPostTemplate
 

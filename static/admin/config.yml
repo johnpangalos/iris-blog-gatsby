@@ -28,19 +28,31 @@ collections:
         options: ["gluten-free", "vegan", "vegetarian", "dairy-free", "naturally-sweetened"]
         multiple: true
         default: []
-      - label: "Ingredients"
-        name: "ingredients"
+      - label: "Meal Parts"
+        name: "meal-part"
         widget: "list"
         fields:
-          - { label: "Name", name: "name", widget: "string" }
           - {
-              label: "Amount",
-              name: "amount",
-              widget: "number",
-              valueType: "float",
+              label: "Ingredients"
+              name: "ingredients"
+              widget: "list"
+              fields:
+                - { label: "Name", name: "name", widget: "string" }
+                - {
+                    label: "Amount",
+                    name: "amount",
+                    widget: "number",
+                    valueType: "float",
+                  }
+                - { label: "Unit", name: "unit", widget: "string" }
+                - { label: "Optional", name: "optional", widget: "boolean", required: false }
+              }
+          - {
+              label: "name"
+              name: "name"
+              widget: "string"
             }
-          - { label: "Unit", name: "unit", widget: "string" }
-          - { label: "Optional", name: "optional", widget: "boolean", required: false }
+        }
       - label: "Instructions"
         name: "instructions"
         widget: "list"
