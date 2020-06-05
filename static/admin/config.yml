@@ -32,27 +32,17 @@ collections:
         name: "meal-part"
         widget: "list"
         fields:
-          - {
-              label: "Ingredients",
-              name: "ingredients",
-              widget: "list",
-              fields:
-                - { label: "Name", name: "name", widget: "string" }
-                - {
-                    label: "Amount",
-                    name: "amount",
-                    widget: "number",
-                    valueType: "float",
-                  }
-                - { label: "Unit", name: "unit", widget: "string" }
-                - { label: "Optional", name: "optional", widget: "boolean", required: false }
-              }
-          - {
-              label: "name",
-              name: "name",
-              widget: "string",
-            }
-        }
+          - label: "Ingredients"
+            name: "ingredients"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - {label: "Amount", name: "amount", widget: "number", valueType: "float"}
+              - { label: "Unit", name: "unit", widget: "string" }
+              - { label: "Optional", name: "optional", widget: "boolean", required: false }
+          - label: "name"
+            name: "name"
+            widget: "string"
       - label: "Instructions"
         name: "instructions"
         widget: "list"
