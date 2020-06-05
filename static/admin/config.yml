@@ -33,9 +33,9 @@ collections:
         widget: "list"
         fields:
           - {
-              label: "Ingredients"
-              name: "ingredients"
-              widget: "list"
+              label: "Ingredients",
+              name: "ingredients",
+              widget: "list",
               fields:
                 - { label: "Name", name: "name", widget: "string" }
                 - {
@@ -48,9 +48,9 @@ collections:
                 - { label: "Optional", name: "optional", widget: "boolean", required: false }
               }
           - {
-              label: "name"
-              name: "name"
-              widget: "string"
+              label: "name",
+              name: "name",
+              widget: "string",
             }
         }
       - label: "Instructions"

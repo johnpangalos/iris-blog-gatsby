@@ -173,14 +173,17 @@ export const pageQuery = graphql`
         prep_time
         description
         course
-        ingredients {
-          amount
-          name
-          optional
-          unit
-        }
         date(formatString: "MMMM DD, YYYY")
       }
     }
   }
 `
+// meal_parts {
+// name
+// ingredients {
+// amount
+// name
+// optional
+// unit
+// }
+// }
