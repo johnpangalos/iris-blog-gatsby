@@ -1,9 +1,7 @@
 import * as React from "react"
-import { Link, PageProps, graphql } from "gatsby"
+import { PageProps, graphql } from "gatsby"
 import Img, { FluidObject } from "gatsby-image"
-import cn from "classnames"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FoodTypeTag } from "../components"
@@ -40,11 +38,14 @@ type Data = {
       instructions: string[]
       description: string
       course: string
-      ingredients: {
-        amount: string
+      meal_part: {
+        ingredients: {
+          amount: string
+          name: string
+          optional: string
+          unit: string
+        }[]
         name: string
-        optional: string
-        unit: string
       }[]
       date: string
     }
@@ -60,7 +61,6 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
     return post.frontmatter.thumbnail.includes(edge.node.relativePath)
   })
 
-  console.log(post.frontmatter.ingredients)
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -85,7 +85,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
         </div>
 
         <div
-          className="border-b-2 pb-4"
+          className="border-b-2 pb-4 space-y-4"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
 
@@ -114,6 +114,19 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
 
         <div>
           <div className="font-bold text-2xl py-2">Ingredients</div>
+          <ul className="list-disc list-inside pl-2">
+            {post.frontmatter.meal_part.map(mp => (
+              <>
+                <div className="font-bold text-lg">{mp.name}</div>
+                {mp.ingredients.map(ingredient => (
+                  <li className="pb-2">
+                    {ingredient.amount} {ingredient.unit} {ingredient.name}{" "}
+                    {ingredient.optional ? "(optional)" : ""}
+                  </li>
+                ))}
+              </>
+            ))}
+          </ul>
 
           <div className="font-bold text-2xl py-2">Instructions</div>
           <ol className="list-decimal list-inside pl-2">
@@ -126,15 +139,6 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
     </Layout>
   )
 }
-
-// <ul className="list-disc list-inside pl-2">
-// {post.frontmatter.ingredients.map(ingredient => (
-// <li className="pb-2">
-// {ingredient.amount} {ingredient.unit} {ingredient.name}{" "}
-// {ingredient.optional ? "(optional)" : ""}
-// </li>
-// ))}
-// </ul>
 
 export default BlogPostTemplate
 
@@ -173,17 +177,18 @@ export const pageQuery = graphql`
         prep_time
         description
         course
+
+        meal_part {
+          name
+          ingredients {
+            amount
+            name
+            optional
+            unit
+          }
+        }
         date(formatString: "MMMM DD, YYYY")
       }
     }
   }
 `
-// meal_parts {
-// name
-// ingredients {
-// amount
-// name
-// optional
-// unit
-// }
-// }

@@ -8,7 +8,7 @@ module.exports = {
       summary: `A blogger with taste`,
     },
     description: `A blog with taste`,
-    siteUrl: `https://relaxed-cray-8d1729.netlify.app`,
+    siteUrl: `https://everyday-eva.netlify.app`,
     social: {
       twitter: `kylemathews`,
     },
