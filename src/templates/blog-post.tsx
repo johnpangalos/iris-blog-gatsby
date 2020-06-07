@@ -1,10 +1,18 @@
 import * as React from "react"
-import { PageProps, graphql } from "gatsby"
+import { PageProps, graphql, useStaticQuery } from "gatsby"
 import Img, { FluidObject } from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { FoodTypeTag } from "../components"
+import { FoodTypeTag, Image } from "../components"
+
+type HtmlNode = {
+  type: "root" | "text" | "element"
+  value?: string
+  tagName?: keyof JSX.IntrinsicElements
+  children?: HtmlNode[]
+  properties?: any
+}
 
 type Data = {
   site: {
@@ -26,7 +34,7 @@ type Data = {
   markdownRemark: {
     id: string
     excerpt: string
-    html: string
+    htmlAst: HtmlNode
     frontmatter: {
       thumbnail: string
       tags: string[]
@@ -84,10 +92,15 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
           />
         </div>
 
-        <div
-          className="border-b-2 pb-4 space-y-4"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <div className="border-b-2 pb-4 space-y-4">
+          {post.htmlAst.children.map((item, idx) => (
+            <BlogHTML
+              node={item}
+              key={`root-${idx}`}
+              rootIdx={idx.toString()}
+            />
+          ))}
+        </div>
 
         <div className="flex-grow pb-2">
           <div className="text-3xl pt-4 font-bold">
@@ -103,8 +116,11 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
                 "Total time",
                 post.frontmatter.cook_time + post.frontmatter.prep_time,
               ],
-            ].map(([name, time]) => (
-              <div className="w-1/3 px-4 py-2 text-center border-gray-900 border-b-2 border-t-2">
+            ].map(([name, time], idx) => (
+              <div
+                key={`${name}-${time}-${idx}`}
+                className="w-1/3 px-4 py-2 text-center border-gray-900 border-b-2 border-t-2"
+              >
                 <div className="font-bold uppercase">{name}</div>
                 <div>{time} minutes</div>
               </div>
@@ -115,29 +131,54 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
         <div>
           <div className="font-bold text-2xl py-2">Ingredients</div>
           <ul className="list-disc list-inside pl-2">
-            {post.frontmatter.meal_part.map(mp => (
-              <>
+            {post.frontmatter.meal_part.map((mp, idx) => (
+              <React.Fragment key={`meal-part-${idx}`}>
                 <div className="font-bold text-lg">{mp.name}</div>
-                {mp.ingredients.map(ingredient => (
-                  <li className="pb-2">
+                {mp.ingredients.map((ingredient, idx) => (
+                  <li className="pb-2" key={`ingredient-${idx}`}>
                     {ingredient.amount} {ingredient.unit} {ingredient.name}{" "}
                     {ingredient.optional ? "(optional)" : ""}
                   </li>
                 ))}
-              </>
+              </React.Fragment>
             ))}
           </ul>
 
           <div className="font-bold text-2xl py-2">Instructions</div>
           <ol className="list-decimal list-inside pl-2">
-            {post.frontmatter.instructions.map(instruction => (
-              <li className="pb-2">{instruction}</li>
+            {post.frontmatter.instructions.map((instruction, idx) => (
+              <li className="pb-2" key={`instruction-${idx}`}>
+                {instruction}
+              </li>
             ))}
           </ol>
         </div>
       </div>
     </Layout>
   )
+}
+
+const BlogHTML = ({ node, rootIdx }: { node: HtmlNode; rootIdx: string }) => {
+  if (node.type === "element" && node.tagName === "img") {
+    return <Image name={node.properties.src} />
+  }
+
+  if (node.type === "element") {
+    const Element = node.tagName === "p" ? "div" : node.tagName || "span"
+    return (
+      <Element>
+        {node.children.map((item, idx) => (
+          <BlogHTML
+            node={item}
+            key={`${rootIdx}-${idx}`}
+            rootIdx={`${rootIdx}-${idx}`}
+          />
+        ))}
+      </Element>
+    )
+  }
+
+  return <React.Fragment key={`${rootIdx}-text`}>{node.value}</React.Fragment>
 }
 
 export default BlogPostTemplate
@@ -165,7 +206,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      htmlAst
       frontmatter {
         thumbnail
         tags
