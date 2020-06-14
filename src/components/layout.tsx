@@ -45,7 +45,7 @@ const SearchBar = () => (
 )
 const HeaderNav = () => (
   <div>
-    <div className="max-w-screen-lg hidden md:block m-auto px-5 ">
+    <div className="max-w-screen-lg hidden md:block m-auto px-5 xl:px-0">
       <div className="py-5 flex items-center px-3 border-gray-900 border-b-2">
         <Link to="/">
           <Logo />
