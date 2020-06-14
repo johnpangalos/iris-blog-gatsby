@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img, { FluidObject } from "gatsby-image"
+import cn from "classnames"
 
 type AllFiles = {
   allFile: {
@@ -16,9 +17,11 @@ type AllFiles = {
   }
 }
 
-export const Image: React.FC<{ name: string }> = ({ name }) => {
+export const Image: React.FC<{ name: string; className?: string }> = ({
+  name,
+  className,
+}) => {
   const data = useStaticQuery(imageQuery)
-
   const {
     node: { childImageSharp },
   } = data.allFile.edges.find(edge => {
@@ -26,13 +29,16 @@ export const Image: React.FC<{ name: string }> = ({ name }) => {
   })
 
   return (
-    <Img className="object-center object-cover" fluid={childImageSharp.fluid} />
+    <Img
+      className={cn("object-center object-cover", className)}
+      fluid={childImageSharp.fluid}
+    />
   )
 }
 
 const imageQuery = graphql`
   query ImageQuery {
-    allFile(filter: { sourceInstanceName: { eq: "blog-images" } }) {
+    allFile {
       edges {
         node {
           relativePath

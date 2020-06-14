@@ -14,8 +14,9 @@ h3 {
   @apply text-xl;
 }
 a {
-  @apply text-orange-600 underline;
+  @apply text-orange-500 underline;
 }
+
 @tailwind components;
 /*! purgecss end ignore */
 @tailwind utilities;
