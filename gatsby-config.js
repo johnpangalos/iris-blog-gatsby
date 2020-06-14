@@ -5,7 +5,7 @@ module.exports = {
     title: `Everyday Eva`,
     author: {
       name: `Eva`,
-      summary: `A blogger with taste`,
+      summary: `A baby that loves grilled cheese. Like really loves grilled cheese. Can't get enough. She is mostly healthy but we're pretty sure her left arm is growing a crust`,
     },
     description: `A blog with taste`,
     siteUrl: `https://everyday-eva.netlify.app`,

@@ -20,10 +20,10 @@ const Bio = () => {
     author: { name, summary },
   } = data.site.siteMetadata
   return (
-    <div className="bg-blue-300">
+    <div className="bg-blue-200">
       <div className="max-w-screen-md px-5 w-full mx-auto py-10 xl:px-0 h-full flex-1">
         <div className="flex">
-          <div className="w-32 h-32">
+          <div className="w-64">
             <Image name="profile-pic.png" className="rounded-full" />
           </div>
           <div className="pl-6">
