@@ -88,13 +88,13 @@ const Layout = ({ location, title, children }) => {
 
 const Footer: React.FC<{}> = () => (
   <div className="bg-gray-300">
-    <div className="max-w-screen-lg pt-3 pb-8 m-auto">
+    <div className="max-w-screen-lg pt-6 pb-10 sm:pt-3 sm:pb-8 m-auto">
       <div className="flex flex-col items-center">
         <Logo />
         <div className="flex items-baseline pb-2">
           <div className="text-xl">Follow us</div>
           {icons.map(name => (
-            <a key={name} href={`#${name}`} className="pl-3">
+            <a key={name} href={`#${name}`} className="pl-5 md:pl-3">
               <FontAwesomeIcon
                 style={{ fontSize: "1.15rem" }}
                 className="text-gray-900"
@@ -102,13 +102,6 @@ const Footer: React.FC<{}> = () => (
               />
             </a>
           ))}
-        </div>
-        <div className="px-5 py-4 w-full">
-          <div className="w-full border-b-2 border-gray-900" />
-        </div>
-        <div className="flex w-full justify-center pt-2">
-          <LinkWrapper to="/#recipes">Recipes</LinkWrapper>
-          <LinkWrapper to="/#articles">Articles</LinkWrapper>
         </div>
       </div>
     </div>

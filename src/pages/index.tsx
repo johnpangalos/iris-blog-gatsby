@@ -5,8 +5,7 @@ import Img, { FluidObject } from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Bio from "../components/bio"
-import { Button, FoodTypeTag } from "../components"
+import { Button, FoodTypeTag, Bio } from "../components"
 
 type Data = {
   site: {

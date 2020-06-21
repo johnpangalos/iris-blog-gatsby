@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <div className="max-w-screen-md m-auto py-6">
+      <div className="max-w-screen-md m-auto py-2 pb-6">
         <div className="text-4xl font-bold">{post.frontmatter.title}</div>
 
         <div>{post.frontmatter.date}</div>
@@ -31,7 +31,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
           <Image name={post.frontmatter.thumbnail} />
         </div>
 
-        <div className="border-b-2 pb-4 space-y-4">
+        <div className="pb-6 border-b-2 border-gray-900 space-y-4">
           {post.htmlAst.children.map((item, idx) => (
             <BlogPost
               node={item}
@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
         </div>
 
         <div className="flex-grow pb-2">
-          <div className="text-3xl pt-4 font-bold">
+          <div className="text-3xl pt-6 font-bold">
             {post.frontmatter.title}
           </div>
           <div className="pb-4">{post.frontmatter.description}</div>
@@ -55,12 +55,12 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
 
         <div>
           <div className="font-bold text-2xl py-2">Ingredients</div>
-          <ul className="list-disc list-inside pl-2">
+          <ul className="list-disc list-outside pl-2">
             {post.frontmatter.meal_part.map((mp, idx) => (
               <React.Fragment key={`meal-part-${idx}`}>
                 <div className="font-bold text-lg">{mp.name}</div>
                 {mp.ingredients.map((ingredient, idx) => (
-                  <li className="pb-2" key={`ingredient-${idx}`}>
+                  <li className="ml-8 pb-2" key={`ingredient-${idx}`}>
                     {ingredient.amount} {ingredient.unit} {ingredient.name}{" "}
                     {ingredient.optional ? "(optional)" : ""}
                   </li>
@@ -70,9 +70,9 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
           </ul>
 
           <div className="font-bold text-2xl py-2">Instructions</div>
-          <ol className="list-decimal list-inside pl-2">
+          <ol className="list-decimal list-outside pl-2">
             {post.frontmatter.instructions.map((instruction, idx) => (
-              <li className="pb-2" key={`instruction-${idx}`}>
+              <li className="ml-8 pb-2" key={`instruction-${idx}`}>
                 {instruction}
               </li>
             ))}
