@@ -27,7 +27,7 @@ const icons: IconName[] = [
 
 const SearchBar = () => (
   <div className="h-12 bg-blue-200">
-    <div className="flex w-full h-full mx-auto items-center max-w-screen-lg px-5 xl:px-0">
+    <div className="flex w-full h-full mx-auto items-center max-w-screen-md">
       <div className="flex-grow" />
       <div className="flex">
         {icons.map(name => (
@@ -45,7 +45,7 @@ const SearchBar = () => (
 )
 const HeaderNav = () => (
   <div>
-    <div className="max-w-screen-lg hidden md:block m-auto px-5 xl:px-0">
+    <div className="max-w-screen-md hidden md:block m-auto">
       <div className="py-5 flex items-center px-3 border-gray-900 border-b-2">
         <Link to="/">
           <Logo />
@@ -88,7 +88,7 @@ const Layout = ({ location, title, children }) => {
 
 const Footer: React.FC<{}> = () => (
   <div className="bg-gray-300">
-    <div className="max-w-screen-lg pt-6 pb-10 sm:pt-3 sm:pb-8 m-auto">
+    <div className="max-w-screen-md pt-6 pb-10 sm:pt-3 sm:pb-8 m-auto">
       <div className="flex flex-col items-center">
         <Logo />
         <div className="flex items-baseline pb-2">
