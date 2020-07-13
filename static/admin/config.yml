@@ -47,3 +47,15 @@ collections:
         name: "instructions"
         widget: "list"
         field: { label: "Step", name: "step", widget: "string" }
+        
+  - name: "articles"
+    label: "Articles"
+    folder: "content/articles"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Description", name: "description", widget: "string" }
