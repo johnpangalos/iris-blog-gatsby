@@ -50,7 +50,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="max-w-screen-md w-full mx-auto pt-2 pb-8 h-full flex-1">
+      <div className="max-w-screen-md w-full mx-auto px-3 md:px-0 pt-2 pb-8 h-full flex-1">
         <div className="flex items-center pb-3">
           <div className="font-bold text-2xl flex-1">New Eats!</div>
           <Button>All Recipies</Button>

@@ -27,7 +27,7 @@ const icons: IconName[] = [
 
 const SearchBar = () => (
   <div className="h-12 bg-blue-200">
-    <div className="flex w-full h-full mx-auto items-center max-w-screen-md">
+    <div className="flex w-full h-full px-3 md:px-0 mx-auto items-center max-w-screen-md">
       <div className="flex-grow" />
       <div className="flex">
         {icons.map(name => (
