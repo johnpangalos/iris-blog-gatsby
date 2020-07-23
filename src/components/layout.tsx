@@ -88,7 +88,7 @@ const Layout = ({ location, title, children }) => {
 
 const Footer: React.FC<{}> = () => (
   <div className="bg-gray-300">
-    <div className="max-w-screen-md pt-6 pb-10 sm:pt-3 sm:pb-8 m-auto">
+    <div className="pt-6 pb-10 sm:pt-3 sm:pb-8 m-auto">
       <div className="flex flex-col items-center">
         <Logo />
         <div className="flex items-baseline pb-2">

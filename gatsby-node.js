@@ -4,13 +4,29 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/Recipe/index.tsx`)
+  const recipePage = path.resolve(`./src/templates/Recipe/index.tsx`)
+  const articlePage = path.resolve(`./src/templates/Article/index.tsx`)
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        recipes: allMarkdownRemark(
+          filter: { fileAbsolutePath: { glob: "**/content/recipes/**" } }
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+        articles: allMarkdownRemark(
+          filter: { fileAbsolutePath: { glob: "**/content/articles/**" } }
+          sort: { fields: [frontmatter___date], order: DESC }
         ) {
           edges {
             node {
@@ -32,15 +48,33 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
+  const recipes = result.data.recipes.edges
+  const articles = result.data.articles.edges
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+  recipes.forEach((post, index) => {
+    const previous =
+      index === recipes.length - 1 ? null : recipes[index + 1].node
+    const next = index === 0 ? null : recipes[index - 1].node
 
     createPage({
       path: post.node.fields.slug,
-      component: blogPost,
+      component: recipePage,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    })
+  })
+
+  articles.forEach((post, index) => {
+    const previous =
+      index === articles.length - 1 ? null : articles[index + 1].node
+    const next = index === 0 ? null : articles[index - 1].node
+
+    createPage({
+      path: post.node.fields.slug,
+      component: articlePage,
       context: {
         slug: post.node.fields.slug,
         previous,
