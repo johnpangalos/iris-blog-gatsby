@@ -43,23 +43,24 @@ const SearchBar = () => (
     </div>
   </div>
 )
-const HeaderNav = () => (
-  <div>
-    <div className="max-w-screen-md hidden md:block m-auto">
-      <div className="py-5 flex items-center px-3 border-gray-900 border-b-2">
-        <Link to="/">
-          <Logo />
-        </Link>
-        <div className="flex-1" />
-        <LinkWrapper to="/#recipes">Recipes</LinkWrapper>
-        <LinkWrapper to="/#articles">Articles</LinkWrapper>
-      </div>
-    </div>
 
-    <div className="md:hidden flex justify-center pt-6">
-      <Link to="/">
-        <Logo />
-      </Link>
+const HeaderNav = () => (
+  <div className="w-full flex justify-center pt-10 px-2 md:px-0">
+    <div className="max-w-screen-md w-full flex justify-center pb-8 pt-4 border-gray-900 border-b-2 border-t-2">
+      <div className="flex flex-col">
+        <div>
+          <Link to="/">
+            <Logo />
+          </Link>
+        </div>
+        <div className="flex justify-center space-x-4">
+          <div className="text-lg font-bold">&middot;</div>
+          <LinkWrapper to="/#recipes">Recipes</LinkWrapper>
+          <div className="text-lg font-bold">&middot;</div>
+          <LinkWrapper to="/#articles">Articles</LinkWrapper>
+          <div className="text-lg font-bold">&middot;</div>
+        </div>
+      </div>
     </div>
   </div>
 )
@@ -67,7 +68,7 @@ const HeaderNav = () => (
 const LinkWrapper: React.FC<{ to: string }> = ({ children, to }) => (
   <Link
     to={to}
-    className="pl-4 uppercase text-lg no-underline text-gray-800 hover:text-orange-500 transition-color duration-500 ease-in-out"
+    className="uppercase text-lg text-gray-800 hover:text-orange-500 transition-color duration-500 ease-in-out"
   >
     {children}
   </Link>

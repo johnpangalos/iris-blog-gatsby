@@ -20,7 +20,7 @@ export const Button = ({
       {
         [`bg-orange-500 shadow hover:shadow-lg transition-shadow text-white`]: contained,
         [`border border-orange-500`]: outlined,
-        [`text-orange-500 hover:bg-orange-200 transition-colors`]: !contained,
+        [`text-orange-500 hover:bg-orange-200 hover:bg-opacity-75 transition-colors`]: !contained,
       }
     )}
     onClick={onClick}
