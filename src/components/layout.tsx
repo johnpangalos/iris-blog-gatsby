@@ -45,7 +45,7 @@ const SearchBar = () => (
 )
 
 const HeaderNav = () => (
-  <div className="w-full flex justify-center pt-10 px-2 md:px-0">
+  <div className="w-full flex justify-center pt-10 px-4 md:px-0">
     <div className="max-w-screen-md w-full flex justify-center pb-8 pt-4 border-gray-900 border-b-2 border-t-2">
       <div className="flex flex-col">
         <div>
@@ -89,7 +89,7 @@ const Layout = ({ location, title, children }) => {
 
 const Footer: React.FC<{}> = () => (
   <div className="bg-gray-300">
-    <div className="pt-6 pb-10 sm:pt-3 sm:pb-8 m-auto">
+    <div className="pt-8 pb-10 sm:pt-6 sm:pb-8 m-auto">
       <div className="flex flex-col items-center">
         <Logo />
         <div className="flex items-baseline pb-2">

@@ -73,7 +73,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <div className="max-w-screen-md w-full mx-auto px-3 md:px-0 pt-2 pb-10 h-full flex-1">
+      <div className="max-w-screen-md w-full mx-auto px-6 md:px-0 pt-2 pb-10 h-full flex-1">
         <div className="flex items-center pb-3">
           <div className="font-bold text-2xl flex-1">New Eats!</div>
           <Button>All Recipies</Button>
@@ -114,7 +114,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         </div>
       </div>
       <div className="bg-blue-200 pt-5">
-        <div className="max-w-screen-md w-full mx-auto px-3 md:px-0 pt-2 pb-10 h-full flex-1">
+        <div className="max-w-screen-md w-full mx-auto px-6 md:px-0 pt-2 pb-10 h-full flex-1">
           <div className="flex items-center pb-3">
             <div className="font-bold text-2xl flex-1">Hot Takes!</div>
             <Button>All Posts</Button>
