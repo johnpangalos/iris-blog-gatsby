@@ -59,6 +59,14 @@ type Data = {
   }
 }
 
+const ReadMoreButton = ({ slug }: { slug: string }) => (
+  <div className="px-2 py-2">
+    <Link to={slug}>
+      <Button>Read more</Button>
+    </Link>
+  </div>
+)
+
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
 
@@ -98,18 +106,14 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                       ))}
                     </div>
                   </div>
-                  <div className="px-2 py-2">
-                    <Link to={node.fields.slug}>
-                      <Button>Read more</Button>
-                    </Link>
-                  </div>
+                  <ReadMoreButton slug={node.fields.slug} />
                 </div>
               </div>
             )
           })}
         </div>
       </div>
-      <div className="bg-gray-300 pt-5">
+      <div className="bg-blue-200 pt-5">
         <div className="max-w-screen-md w-full mx-auto px-3 md:px-0 pt-2 pb-10 h-full flex-1">
           <div className="flex items-center pb-3">
             <div className="font-bold text-2xl flex-1">Hot Takes!</div>
@@ -137,11 +141,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                       <div className="font-bold text-xl">{title}</div>
                       <div>{node.frontmatter.description}</div>
                     </div>
-                    <div className="px-2 py-2">
-                      <Link to={node.fields.slug}>
-                        <Button>Read more</Button>
-                      </Link>
-                    </div>
+                    <ReadMoreButton slug={node.fields.slug} />
                   </div>
                 </div>
               )
