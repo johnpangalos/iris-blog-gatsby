@@ -44,6 +44,15 @@ const SearchBar = () => (
   </div>
 )
 
+const NavLinks = () => (
+  <div className="flex justify-center space-x-4">
+    <div className="text-lg font-bold">&middot;</div>
+    <LinkWrapper to="/#recipes">Recipes</LinkWrapper>
+    <div className="text-lg font-bold">&middot;</div>
+    <LinkWrapper to="/#articles">Articles</LinkWrapper>
+    <div className="text-lg font-bold">&middot;</div>
+  </div>
+)
 const HeaderNav = () => (
   <div className="w-full flex justify-center pt-10 px-4 md:px-0">
     <div className="max-w-screen-md w-full flex justify-center pb-8 pt-4 border-gray-900 border-b-2 border-t-2">
@@ -53,13 +62,7 @@ const HeaderNav = () => (
             <Logo />
           </Link>
         </div>
-        <div className="flex justify-center space-x-4">
-          <div className="text-lg font-bold">&middot;</div>
-          <LinkWrapper to="/#recipes">Recipes</LinkWrapper>
-          <div className="text-lg font-bold">&middot;</div>
-          <LinkWrapper to="/#articles">Articles</LinkWrapper>
-          <div className="text-lg font-bold">&middot;</div>
-        </div>
+        <NavLinks />
       </div>
     </div>
   </div>
@@ -89,10 +92,10 @@ const Layout = ({ location, title, children }) => {
 
 const Footer: React.FC<{}> = () => (
   <div className="bg-gray-300">
-    <div className="pt-8 pb-10 sm:pt-6 sm:pb-8 m-auto">
+    <div className="pt-10 pb-16 sm:pt-6 sm:pb-8 m-auto">
       <div className="flex flex-col items-center">
         <Logo />
-        <div className="flex items-baseline pb-2">
+        <div className="flex items-baseline pb-6">
           <div className="text-xl">Follow us</div>
           {icons.map(name => (
             <a key={name} href={`#${name}`} className="pl-5 md:pl-3">
@@ -104,6 +107,8 @@ const Footer: React.FC<{}> = () => (
             </a>
           ))}
         </div>
+
+        <NavLinks />
       </div>
     </div>
   </div>
