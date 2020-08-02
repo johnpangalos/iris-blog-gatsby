@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: master
 
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
@@ -37,8 +38,8 @@ collections:
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - {label: "Amount", name: "amount", widget: "number", valueType: "float"}
-              - { label: "Unit", name: "unit", widget: "string" }
+              - {label: "Amount", name: "amount", widget: "number", valueType: "float", required: false}
+              - { label: "Unit", name: "unit", widget: "string", required: false }
               - { label: "Optional", name: "optional", widget: "boolean", required: false }
           - label: "name"
             name: "name"
