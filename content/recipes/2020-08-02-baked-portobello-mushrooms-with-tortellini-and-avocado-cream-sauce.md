@@ -116,76 +116,8 @@ instructions:
     Now its time to eat. Place the pasta into a dish and top with the mushrooms
     and if you are like me, throw on some extra nutritional yeast and chili.
 ---
-This is one of my favourite lazy rainy day comfort meal. Can easily be made non vegan with your favourite Tortellini or added cheese of your choice! 
+This is one of my favourite lazy rainy day comfort meals. This can easily be made non vegan with your favourite brand of Tortellini, some chopped up cured meats or an added cheese of your choice! 
 
 Sidenote about the spice quanities. ANY time I am following a recipe, I never think there is enough spice, like who is just using a half a teaspoon of basil - WHO?? Not me that is for sure. I end up adding more spice than my partners palate can deal with, but thats just me. So if you find yourself in the process of cooking this meal and you want alter the amounts of the spices to your tasting pleasure, then go nuts! You are the one having to eat it after all. 
 
-
-
-Hope you enjoy :) ! 
-
-
-
-
-
-Ingredients:
-
-Roasted Mushrooms:
-
-
-
-3 Portobello Mushroms
-
-Balsamic vinegar 
-
-Olive Oil
-
-Mustard Seed - can use seedy mustard, will just be a stronger flavour 
-
-Pepper
-
-
-
-Pasta:
-
-1 package of Kite Hill Totellini (or any of choice) 
-
-1 Red Bell Pepper
-
-1 Onion
-
-3 Cloves of Garlic
-
-4 cups of sliced kale
-
-
-
-salt
-
-Pepper (Lots)
-
-Chilli Flakes
-
-Basil
-
-Thyme
-
-Coconut Oil
-
-
-
-Sauce:
-
-
-
-2 avocado
-
-½ Lemon
-
-1 clove of garlic
-
-Olive oil
-
-Salt
-
-Pepper
+I hope you enjoy :)
