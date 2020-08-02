@@ -120,4 +120,4 @@ This is one of my favourite lazy rainy day comfort meals. This can easily be mad
 
 Sidenote about the spice quanities. ANY time I am following a recipe, I never think there is enough spice, like who is just using a half a teaspoon of basil - WHO?? Not me that is for sure. I end up adding more spice than my partners palate can deal with, but thats just me. So if you find yourself in the process of cooking this meal and you want alter the amounts of the spices to your tasting pleasure, then go nuts! You are the one having to eat it after all. 
 
-I hope you enjoy :)
+I hope you enjoy as much as I do :)
