@@ -73,7 +73,7 @@ meal-part:
       - name: Salt and Pepper
         unit: "To taste "
 instructions:
-  - Preheat the oven to 450F. To make this dreamy rainy day comfort food, you
+  - 'Preheat the oven to 450F. To make this dreamy rainy day comfort food, you
     will first need to marinate the mushrooms. Use a towel to gently rub the
     mushrooms to help remove any dirt and take off the stems. Take the olive
     oil, seedy mustard, balsamic and salt and pepper and combine in a bowl. Once
@@ -114,7 +114,8 @@ instructions:
     heat on this low just to keep warm. Stir it all together so everything is
     coated nicely. Add the sauce and continue to stir to coat the entire dish.
     Now its time to eat. Place the pasta into a dish and top with the mushrooms
-    and if you are like me, throw on some extra nutritional yeast and chili.
+    and if you are like me, throw on some extra nutritional yeast and chili and
+    voila! Enjoy every last bite. '
 ---
 This is one of my favourite lazy rainy day comfort meals. This can easily be made non vegan with your favourite brand of Tortellini, some chopped up cured meats or an added cheese of your choice! 
 
