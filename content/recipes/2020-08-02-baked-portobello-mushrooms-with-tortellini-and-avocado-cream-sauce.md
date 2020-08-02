@@ -73,23 +73,23 @@ meal-part:
       - name: Salt and Pepper
         unit: "To taste "
 instructions:
-  - 'Preheat the oven to 450F. To make this dreamy rainy day comfort food, you
-    will first need to marinate the mushrooms. Use a towel to gently rub the
-    mushrooms to help remove any dirt and take off the stems. Take the olive
-    oil, seedy mustard, balsamic and salt and pepper and combine in a bowl. Once
-    combined, pour over the mushrooms, make sure all the mushrooms are coated
-    and let this mixture sit in the fridge for at least 20 mins (up to 3 hours).
-    While that is marinating, go ahead and slice the red pepper right down the
-    middle. Discard of the seeds and stem, and place it face up on a greased
-    baking sheet. Drizzle the pepper with some olive oil and some salt and
-    pepper. Never be afraid of "too much pepper" and a little oops for good
-    measure. Flip the peppers face down and drizzle with a little more olive
-    oil, get that healthy fat for the heart!! Once the oven is ready, pop this
-    in and cook for 20 mins or until tender. While this is roasting away, chop
-    up the onion and garlic and set aside. Dont let the emotional outpour from
-    chopping the onion let you forget to remove those peppers from the oven! Let
-    cool. Change the oven temperature to 400F and lets get started on those
-    mushrooms! Place the marinated musrooms in a greased pan bottom of the
+  - 'To begin, preheat the oven to 450F. To make this dreamy rainy day comfort
+    food, you will first need to marinate the mushrooms. Use a towel to gently
+    rub the mushrooms to help remove any dirt and take off the stems. Take the
+    olive oil, seedy mustard, balsamic and salt and pepper and combine in a
+    bowl. Once combined, pour over the mushrooms, make sure all the mushrooms
+    are coated and let this mixture sit in the fridge for at least 20 mins (up
+    to 3 hours). While that is marinating, go ahead and slice the red pepper
+    right down the middle. Discard of the seeds and stem, and place it face up
+    on a greased baking sheet. Drizzle the pepper with some olive oil and some
+    salt and pepper. Never be afraid of "too much pepper" and a little oops for
+    good measure. Flip the peppers face down and drizzle with a little more
+    olive oil, get that healthy fat for the heart!! Once the oven is ready, pop
+    this in and cook for 20 mins or until tender. While this is roasting away,
+    chop up the onion and garlic and set aside. Dont let the emotional outpour
+    from chopping the onion let you forget to remove those peppers from the
+    oven! Let cool. Change the oven temperature to 400F and lets get started on
+    those mushrooms! Place the marinated musrooms in a greased pan bottom of the
     mushroom facing up and bake for 15 mins. Flip the mushrooms facing up and
     cook for another 15 mins, giving it a nice golden colour. I personally set a
     timer for this, as I know I will forget and be eating burned mushrooms for
