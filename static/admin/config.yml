@@ -47,7 +47,7 @@ collections:
       - label: "Instructions"
         name: "instructions"
         widget: "list"
-        field: { label: "Step", name: "step", widget: "string" }
+        field: { label: "Step", name: "step", widget: "markdown" }
         
   - name: "articles"
     label: "Articles"
