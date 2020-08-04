@@ -62,7 +62,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
                 {mp.ingredients.map((ingredient, idx) => (
                   <li className="ml-8 pb-2" key={`ingredient-${idx}`}>
                     {ingredient.amount && `${ingredient.amount} `}
-                    {ingredient.unit && `${ingredient.unit}`}
+                    {ingredient.unit && `${ingredient.unit} `}
                     {ingredient.name} {ingredient.optional ? "(optional)" : ""}
                   </li>
                 ))}
