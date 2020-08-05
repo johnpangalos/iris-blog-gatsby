@@ -14,7 +14,7 @@ const Article = ({ data, location }: PageProps<Data>) => {
         title={article.frontmatter.title}
         description={article.frontmatter.description || article.excerpt}
       />
-      <div className="max-w-screen-md m-auto px-4 lg:px-0 py-2 pb-6">
+      <div className="max-w-screen-md m-auto px-6 lg:px-0 py-2 pb-6">
         <div className="text-4xl font-bold">{article.frontmatter.title}</div>
         <div className="pb-2">{article.frontmatter.date}</div>
 

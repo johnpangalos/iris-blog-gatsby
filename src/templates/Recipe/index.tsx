@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<Data>) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <div className="max-w-screen-md m-auto px-4 lg:px-0 py-2 pb-6">
+      <div className="max-w-screen-md m-auto px-6 lg:px-0 py-2 pb-6">
         <div className="text-4xl font-bold">{post.frontmatter.title}</div>
 
         <div>{post.frontmatter.date}</div>

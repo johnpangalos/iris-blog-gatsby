@@ -47,9 +47,9 @@ const SearchBar = () => (
 const NavLinks = () => (
   <div className="flex justify-center space-x-4">
     <div className="text-lg font-bold">&middot;</div>
-    <LinkWrapper to="/#recipes">Recipes</LinkWrapper>
+    <LinkWrapper to="/recipes">Recipes</LinkWrapper>
     <div className="text-lg font-bold">&middot;</div>
-    <LinkWrapper to="/#articles">Articles</LinkWrapper>
+    <LinkWrapper to="/articles">Articles</LinkWrapper>
     <div className="text-lg font-bold">&middot;</div>
   </div>
 )
