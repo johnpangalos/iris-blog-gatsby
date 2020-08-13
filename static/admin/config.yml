@@ -7,13 +7,16 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "bio"
-    label: "Biography"
-    file: "content/bio.yml"
-    fields:
-      - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Profile image", name: "profile-image", widget: "image" }
-      - { label: "Title", name: "title", widget: "string" }
+  - name: "pages"
+    label: "Pages"
+    files: 
+    - label: "Biography"
+      name: "bio"
+      file: "content/bio.yml"
+      fields:
+        - { label: "Description", name: "description", widget: "markdown" }
+        - { label: "Profile image", name: "profile-image", widget: "image" }
+        - { label: "Title", name: "title", widget: "string" }
   - name: "recipes"
     label: "Recipes"
     folder: "content/recipes"
