@@ -4,6 +4,14 @@ import { Image } from "./Image"
 
 const BioQuery = graphql`
   query BioQuery {
+    allFile(filter: { sourceInstanceName: { eq: "bio" } }) {
+      edges {
+        node {
+          relativePath
+          name
+        }
+      }
+    }
     site {
       siteMetadata {
         author {

@@ -12,7 +12,7 @@ collections:
     files: 
     - label: "Biography"
       name: "bio"
-      file: "content/bio.yml"
+      file: "content/pages/bio.md"
       fields:
         - { label: "Description", name: "description", widget: "markdown" }
         - { label: "Profile image", name: "profile-image", widget: "image" }
