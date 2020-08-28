@@ -4,19 +4,16 @@ import { Image } from "./Image"
 
 const BioQuery = graphql`
   query BioQuery {
-    allFile(filter: { sourceInstanceName: { eq: "bio" } }) {
+    bio: allMarkdownRemark(
+      filter: { fileAbsolutePath: { glob: "**/bio.md" } }
+    ) {
       edges {
         node {
-          relativePath
-          name
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        author {
-          name
-          summary
+          frontmatter {
+            description
+            title
+            profile_image
+          }
         }
       }
     }
@@ -24,22 +21,29 @@ const BioQuery = graphql`
 `
 
 type BioResponse = {
-  site: {
-    siteMetadata: {
-      author: {
-        name: string
-        summary: string
+  bio: {
+    edges: {
+      node: {
+        frontmatter: {
+          description: string
+          title: string
+          profile_image: string
+        }
       }
-    }
+    }[]
   }
 }
 
 export const Bio = () => {
   const {
-    site: {
-      siteMetadata: {
-        author: { name, summary },
-      },
+    bio: {
+      edges: [
+        {
+          node: {
+            frontmatter: { title, description, profile_image: profileImage },
+          },
+        },
+      ],
     },
   } = useStaticQuery<BioResponse>(BioQuery)
 
@@ -48,11 +52,11 @@ export const Bio = () => {
       <div className="max-w-screen-md px-5 w-full mx-auto py-16 xl:px-0 h-full flex-1">
         <div className="flex flex-col px-4 sm:px-0 sm:flex-row items-center">
           <div className="w-full max-w-xs pb-4 sm:p-0 sm:w-1/3 md:w-1/4">
-            <Image name="profile-pic.png" className="rounded-full" />
+            <Image name={profileImage} className="rounded-full" />
           </div>
           <div className="sm:pl-6 flex-1">
-            <h3>About {name}</h3>
-            <div>{summary}</div>
+            <h3>{title}</h3>
+            <div>{description}</div>
           </div>
         </div>
       </div>
