@@ -1,28 +1,14 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import {
-  library,
-  IconPrefix,
-  IconName,
-} from "@fortawesome/fontawesome-svg-core"
-import {
-  faInstagram,
-  faPinterestP,
-  faYoutube,
-  faTwitter,
-  faFacebookF,
-} from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Facebook, Instagram, Twitter, Youtube, IconProps } from "react-feather"
+
 import Logo from "./Logo"
 
-library.add(faInstagram, faPinterestP, faYoutube, faTwitter, faFacebookF)
-
-const icons: IconName[] = [
-  "facebook-f",
-  "instagram",
-  "twitter",
-  "pinterest-p",
-  "youtube",
+const icons: { name: string; Elem: React.FC<IconProps> }[] = [
+  { name: "facebook", Elem: Facebook },
+  { name: "instagram", Elem: Instagram },
+  { name: "twitter", Elem: Twitter },
+  { name: "youtube", Elem: Youtube },
 ]
 
 const SearchBar = () => (
@@ -30,13 +16,9 @@ const SearchBar = () => (
     <div className="flex w-full h-full px-3 md:px-0 mx-auto items-center max-w-screen-md">
       <div className="flex-grow" />
       <div className="flex">
-        {icons.map(name => (
+        {icons.map(({ name, Elem }) => (
           <a key={name} href={`#${name}`} className="pl-4">
-            <FontAwesomeIcon
-              style={{ fontSize: "1.2rem" }}
-              className="text-gray-900"
-              icon={{ prefix: "fab" as IconPrefix, iconName: name }}
-            />
+            <Elem color="black" />
           </a>
         ))}
       </div>
@@ -95,15 +77,11 @@ const Footer: React.FC<{}> = () => (
     <div className="pt-10 pb-16 sm:pt-6 sm:pb-8 m-auto">
       <div className="flex flex-col items-center">
         <Logo />
-        <div className="flex items-baseline pb-6">
+        <div className="flex items-center pb-6">
           <div className="text-xl">Follow us</div>
-          {icons.map(name => (
-            <a key={name} href={`#${name}`} className="pl-5 md:pl-3">
-              <FontAwesomeIcon
-                style={{ fontSize: "1.15rem" }}
-                className="text-gray-900"
-                icon={{ prefix: "fab" as IconPrefix, iconName: name }}
-              />
+          {icons.map(({ name, Elem }) => (
+            <a key={name} href={`#${name}`} className="pl-4">
+              <Elem color="black" />
             </a>
           ))}
         </div>
